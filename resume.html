@@ -36,4 +36,610 @@
         radial-gradient(circle at top left, rgba(124, 58, 237, 0.13), transparent 34rem),
         linear-gradient(135deg, #f8f5ef 0%, var(--bg) 48%, #ede7dd 100%);
       color: var(--ink);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Se
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover,
+    a:focus-visible {
+      color: var(--accent-dark);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .page-shell {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 40px auto;
+    }
+
+    .resume {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      overflow: hidden;
+      background: var(--paper);
+      border: 1px solid rgba(215, 208, 196, 0.85);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .sidebar {
+      position: relative;
+      padding: 42px 34px;
+      background: #1d1630;
+      color: #fffaf0;
+    }
+
+    .sidebar::after {
+      content: "";
+      position: absolute;
+      inset: auto -70px -70px auto;
+      width: 180px;
+      height: 180px;
+      border-radius: 999px;
+      background: rgba(124, 58, 237, 0.42);
+      filter: blur(4px);
+    }
+
+    .monogram {
+      display: grid;
+      place-items: center;
+      width: 76px;
+      height: 76px;
+      margin-bottom: 26px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 24px;
+      background: linear-gradient(145deg, rgba(255,255,255,0.16), rgba(255,255,255,0.04));
+      color: #fff;
+      font-size: 1.7rem;
+      font-weight: 800;
+      letter-spacing: -0.06em;
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: #cbbefb;
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.15rem, 5vw, 3.9rem);
+      line-height: 0.96;
+      letter-spacing: -0.075em;
+    }
+
+    .headline {
+      max-width: 26rem;
+      margin: 18px 0 0;
+      color: rgba(255, 250, 240, 0.8);
+      font-size: 0.98rem;
+    }
+
+    .sidebar-section {
+      position: relative;
+      z-index: 1;
+      margin-top: 34px;
+    }
+
+    .sidebar h2,
+    .content h2 {
+      margin: 0 0 14px;
+      font-size: 0.78rem;
+      font-weight: 850;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .sidebar h2 {
+      color: #dcd4ff;
+    }
+
+    .contact-list,
+    .compact-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .contact-list a,
+    .contact-list span {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255, 250, 240, 0.88);
+      font-size: 0.92rem;
+      word-break: break-word;
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      flex: 0 0 6px;
+      border-radius: 999px;
+      background: #a78bfa;
+    }
+
+    .skill-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .skill-cloud li {
+      padding: 7px 10px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.07);
+      color: rgba(255, 250, 240, 0.9);
+      font-size: 0.78rem;
+      font-weight: 650;
+    }
+
+    .content {
+      padding: 44px 48px 48px;
+    }
+
+    .summary-card {
+      padding: 26px 28px;
+      border: 1px solid var(--soft);
+      border-radius: 22px;
+      background: linear-gradient(135deg, #fffaf2, #f7f2ea);
+    }
+
+    .summary-card p {
+      margin: 0;
+      color: #34302b;
+      font-size: 1.02rem;
+    }
+
+    .section {
+      margin-top: 34px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .section-header::after {
+      content: "";
+      height: 1px;
+      flex: 1;
+      background: var(--line);
+    }
+
+    .content h2 {
+      color: var(--accent-dark);
+    }
+
+    .timeline {
+      display: grid;
+      gap: 22px;
+    }
+
+    .role {
+      position: relative;
+      display: grid;
+      gap: 10px;
+      padding: 0 0 22px 22px;
+      border-left: 1px solid var(--line);
+    }
+
+    .role:last-child {
+      padding-bottom: 0;
+    }
+
+    .role::before {
+      content: "";
+      position: absolute;
+      top: 5px;
+      left: -6px;
+      width: 11px;
+      height: 11px;
+      border: 2px solid var(--paper);
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.14);
+    }
+
+    .role-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    h3 {
+      margin: 0;
+      color: #1f1d1a;
+      font-size: 1.05rem;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+    }
+
+    .role-title {
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 650;
+    }
+
+    .meta {
+      flex: 0 0 auto;
+      padding: 5px 10px;
+      border: 1px solid var(--soft);
+      border-radius: 999px;
+      background: #fbf7ef;
+      color: var(--muted);
+      font-size: 0.76rem;
+      font-weight: 780;
+      white-space: nowrap;
+    }
+
+    .role ul,
+    .project ul {
+      margin: 0;
+      padding-left: 1.1rem;
+      color: #3a352f;
+    }
+
+    .role li,
+    .project li {
+      margin: 6px 0;
+    }
+
+    .grid-two {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .project,
+    .education-card {
+      padding: 18px 18px 17px;
+      border: 1px solid var(--soft);
+      border-radius: 18px;
+      background: rgba(255, 250, 242, 0.7);
+    }
+
+    .project h3,
+    .education-card h3 {
+      margin-bottom: 6px;
+      font-size: 0.98rem;
+    }
+
+    .project p,
+    .education-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .education-card strong {
+      color: #2b2925;
+    }
+
+    .tools-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 13px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 9px;
+      border-radius: 999px;
+      background: var(--chip);
+      color: #504941;
+      font-size: 0.74rem;
+      font-weight: 760;
+    }
+
+    .print-action {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 10;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 18px;
+      border: 0;
+      border-radius: 999px;
+      background: var(--accent-dark);
+      color: #fff;
+      font: inherit;
+      font-size: 0.9rem;
+      font-weight: 800;
+      box-shadow: 0 12px 30px rgba(76, 29, 149, 0.24);
+      cursor: pointer;
+    }
+
+    .print-action:hover,
+    .print-action:focus-visible {
+      background: var(--accent);
+      outline: 3px solid rgba(124, 58, 237, 0.24);
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 900px) {
+      .page-shell {
+        width: min(calc(100% - 20px), var(--max));
+        margin: 10px auto;
+      }
+
+      .resume {
+        grid-template-columns: 1fr;
+        border-radius: 22px;
+      }
+
+      .sidebar,
+      .content {
+        padding: 30px 24px;
+      }
+
+      .grid-two {
+        grid-template-columns: 1fr;
+      }
+
+      .role-top {
+        display: grid;
+      }
+
+      .meta {
+        width: fit-content;
+      }
+    }
+
+    @media print {
+      @page {
+        size: A4;
+        margin: 12mm;
+      }
+
+      body {
+        background: #fff;
+      }
+
+      .page-shell {
+        width: 100%;
+        margin: 0;
+      }
+
+      .resume {
+        display: grid;
+        grid-template-columns: 31% 69%;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+      }
+
+      .sidebar {
+        background: #201936 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .content {
+        padding: 0 0 0 28px;
+      }
+
+      .sidebar {
+        padding: 26px 22px;
+      }
+
+      .summary-card,
+      .project,
+      .education-card,
+      .meta,
+      .tag {
+        background: #fffaf2 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .print-action {
+        display: none;
+      }
+
+      .section {
+        break-inside: avoid;
+        margin-top: 24px;
+      }
+
+      .role,
+      .project,
+      .education-card {
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <main class="resume" aria-label="Resume of Keshav Bansal">
+      <aside class="sidebar" aria-label="Contact and skills">
+        <div class="monogram" aria-hidden="true">KB</div>
+        <p class="eyebrow">Capital Markets · Trading Strategy</p>
+        <h1>Keshav Bansal</h1>
+        <p class="headline">Economics graduate and CFA Level I cleared finance professional combining equity research, business development, and data-led trading strategy work.</p>
+
+        <section class="sidebar-section" aria-labelledby="contact-heading">
+          <h2 id="contact-heading">Contact</h2>
+          <ul class="contact-list">
+            <li><a href="mailto:keshavbansal128@gmail.com"><span class="dot" aria-hidden="true"></span>keshavbansal128@gmail.com</a></li>
+            <li><a href="https://www.linkedin.com/in/keshav061202" target="_blank" rel="noreferrer"><span class="dot" aria-hidden="true"></span>linkedin.com/in/keshav061202</a></li>
+            <li><span><span class="dot" aria-hidden="true"></span>Gurugram, Haryana, India</span></li>
+          </ul>
+        </section>
+
+        <section class="sidebar-section" aria-labelledby="skills-heading">
+          <h2 id="skills-heading">Core Skills</h2>
+          <ul class="skill-cloud">
+            <li>Equity Research</li>
+            <li>Capital Markets</li>
+            <li>Bond Markets</li>
+            <li>Mutual Funds</li>
+            <li>REIT Research</li>
+            <li>Indian Equities</li>
+            <li>F&amp;O Markets</li>
+            <li>Business Development</li>
+            <li>Trading Strategy</li>
+            <li>Market Analysis</li>
+            <li>Financial Automation</li>
+          </ul>
+        </section>
+
+        <section class="sidebar-section" aria-labelledby="cert-heading">
+          <h2 id="cert-heading">Certifications</h2>
+          <ul class="compact-list">
+            <li>CFA Level I Cleared</li>
+            <li>Preparing for CFA Level II</li>
+            <li>GFMS Certification, BSE Institute Ltd</li>
+          </ul>
+        </section>
+
+        <section class="sidebar-section" aria-labelledby="lang-heading">
+          <h2 id="lang-heading">Languages</h2>
+          <ul class="compact-list">
+            <li>English — Full Professional</li>
+            <li>Hindi — Full Professional</li>
+          </ul>
+        </section>
+      </aside>
+
+      <section class="content">
+        <section class="summary-card" aria-labelledby="summary-heading">
+          <h2 id="summary-heading">Profile</h2>
+          <p>Capital markets professional currently pursuing PGP Rise in Capital Markets and Trading at Masters’ Union. Experience spans equity product research at Aditya Birla Sun Life AMC, business development in a legacy family enterprise, and proprietary trading strategy/product work. Strong interest in Indian equities, alternative investments, market structure, and research-led capital allocation.</p>
+        </section>
+
+        <section class="section" aria-labelledby="experience-heading">
+          <div class="section-header"><h2 id="experience-heading">Experience</h2></div>
+          <div class="timeline">
+            <article class="role">
+              <div class="role-top">
+                <div>
+                  <h3>M/S Ravi Prakash and Sons</h3>
+                  <div class="role-title">Business Development Associate · Dhampur, Uttar Pradesh</div>
+                </div>
+                <span class="meta">Mar 2024 – Present</span>
+              </div>
+              <ul>
+                <li>Work across strategic and operating roles in a nearly century-old family business spanning jewellery, agriculture, and financial-market diversification initiatives.</li>
+                <li>Evaluate new business opportunities across agriculture, agro-hardware, and allied verticals through feasibility thinking, market mapping, operating requirements, and risk assessment.</li>
+                <li>Support proprietary trading strategy research workflows for disciplined, data-led capital allocation and family wealth management.</li>
+                <li>Contribute to retail/wholesale operations, procurement coordination, inventory support, customer interaction, and exhibition representation.</li>
+              </ul>
+            </article>
+
+            <article class="role">
+              <div class="role-top">
+                <div>
+                  <h3>M/S Ravi Prakash and Sons</h3>
+                  <div class="role-title">Assistant to the Manager · Dhampur, Uttar Pradesh</div>
+                </div>
+                <span class="meta">Jan 2021 – Feb 2024</span>
+              </div>
+              <ul>
+                <li>Managed flexible responsibilities across designer-jewellery supply-chain coordination, store operations, customer servicing, and wholesale/retail execution.</li>
+                <li>Built practical operating understanding across inventory movement, procurement cycles, counter sales, client relationships, and business discipline.</li>
+                <li>Tracked equity, commodity, and F&amp;O markets, with focus on gold/silver risk awareness for jewellery-business decision-making.</li>
+              </ul>
+            </article>
+
+            <article class="role">
+              <div class="role-top">
+                <div>
+                  <h3>Aditya Birla Sun Life AMC Limited</h3>
+                  <div class="role-title">Trainee — Equity Products · Mumbai, Maharashtra</div>
+                </div>
+                <span class="meta">Dec 2023 – Feb 2024</span>
+              </div>
+              <ul>
+                <li>Conducted competitor research and market-placement analysis across mutual fund products to identify underperforming categories and support product-level interventions.</li>
+                <li>Carried out market and opportunity sizing for US REITs and REIT-based funds, including regulatory landscape, product structure, and positioning considerations.</li>
+                <li>Engaged with mutual fund distributors and internal stakeholders to gather market intelligence on product performance across customer segments and fund categories.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="section" aria-labelledby="projects-heading">
+          <div class="section-header"><h2 id="projects-heading">Selected Work</h2></div>
+          <div class="grid-two">
+            <article class="project">
+              <h3>ArjunX / Algorithmic Trading Strategy Product</h3>
+              <p>Developed the concept and research architecture for a strategy system balancing expressibility with ease of use across multi-asset and multi-timeframe workflows.</p>
+              <div class="tools-row"><span class="tag">Trading Systems</span><span class="tag">Research Design</span></div>
+            </article>
+
+            <article class="project">
+              <h3>Strategy Builder &amp; DSL Workflows</h3>
+              <p>Designed structured strategy logic, rule-builder flows, and parser feedback loops to translate trading ideas into cleaner executable strategy definitions.</p>
+              <div class="tools-row"><span class="tag">Backtesting</span><span class="tag">Product Thinking</span></div>
+            </article>
+
+            <article class="project">
+              <h3>Asset Embeddings Research</h3>
+              <p>Explored NSE asset relationship modeling using historical daily price data, similarity/dissimilarity cookbooks, and semantic audits of learned embedding spaces.</p>
+              <div class="tools-row"><span class="tag">Indian Equities</span><span class="tag">Data Research</span></div>
+            </article>
+
+            <article class="project">
+              <h3>AI Notes Mapping Engine</h3>
+              <p>Prepared POC planning for an AI-enabled financial notes generation system using ETL pipelines, mapping logic, validation checks, and human-in-the-loop review.</p>
+              <div class="tools-row"><span class="tag">AI Workflows</span><span class="tag">ETL</span></div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section" aria-labelledby="education-heading">
+          <div class="section-header"><h2 id="education-heading">Education</h2></div>
+          <div class="grid-two">
+            <article class="education-card">
+              <h3>Masters’ Union</h3>
+              <p><strong>PGP Rise: Capital Markets and Trading</strong><br />Sep 2025 – Aug 2026</p>
+            </article>
+            <article class="education-card">
+              <h3>St. Xavier’s College, Mumbai</h3>
+              <p><strong>Bachelor of Arts — Economics Major</strong><br />2020 – 2023</p>
+            </article>
+            <article class="education-card">
+              <h3>BSE Institute Ltd</h3>
+              <p><strong>GFMS Certification</strong><br />Banking, Corporate Finance and Securities Law · 2021 – 2022</p>
+            </article>
+            <article class="education-card">
+              <h3>Delhi Public School, R. K. Puram</h3>
+              <p><strong>High School Diploma</strong><br />Science with Economics · 2018 – 2020</p>
+            </article>
+          </div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <button class="print-action" type="button" onclick="window.print()" aria-label="Print or save resume as PDF">Print / Save PDF</button>
+</body>
+</html>
